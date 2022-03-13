@@ -2,25 +2,25 @@ package flightDetails;
 import java.time.LocalDateTime;
 
 public abstract class Ticket {
-    private String pnr;
+    private String pnrNo;
     private String from;
     private String to;
-    private String departureDateTime;
-    private String arrivalDateTime;
+    private String departureTime;
+    private String arrivalTime;
     private String seatNo;
     private float price;
     private boolean cancelled;
     private Flight flight;
     private Traveller traveller;
 
-    public Ticket(String pnr, String from, String to, String departureDateTime,
-                  String arrivalDateTime, String seatNo, float price, boolean cancelled,
+    public Ticket(String pnrNo, String from, String to, String departureTime,
+                  String arrivalTime, String seatNo, float price, boolean cancelled,
                   Flight flight, Traveller traveller) {
-        this.pnr = pnr;
+        this.pnrNo = pnrNo;
         this.from = from;
         this.to = to;
-        this.departureDateTime = departureDateTime;
-        this.arrivalDateTime = arrivalDateTime;
+        this.departureTime = departureTime;
+        this.arrivalTime = arrivalTime;
         this.seatNo = seatNo;
         this.price = price;
         this.cancelled = cancelled;
@@ -33,8 +33,8 @@ public abstract class Ticket {
     }
 
     public int getFlightDuration() {
-        LocalDateTime departureLocalDateTime = LocalDateTime.parse(departureDateTime);
-        LocalDateTime arrivalLocalDateTime = LocalDateTime.parse(arrivalDateTime);
+        LocalDateTime departureLocalDateTime = LocalDateTime.parse(departureTime);
+        LocalDateTime arrivalLocalDateTime = LocalDateTime.parse(arrivalTime);
         return (arrivalLocalDateTime.getDayOfMonth() - departureLocalDateTime.getDayOfMonth()) * 24 +
                 (arrivalLocalDateTime.getHour() - departureLocalDateTime.getHour());
     }
@@ -43,12 +43,12 @@ public abstract class Ticket {
         cancelled = true;
     }
 
-    public String getPnr() {
-        return pnr;
+    public String getPnrNo() {
+        return pnrNo;
     }
 
-    public void setPnr(String pnr) {
-        this.pnr = pnr;
+    public void setPnrNo(String pnr) {
+        this.pnrNo = pnr;
     }
 
     public String getFrom() {
@@ -67,20 +67,20 @@ public abstract class Ticket {
         this.to = to;
     }
 
-    public String getDepartureDateTime() {
-        return departureDateTime;
+    public String getDepartureTime() {
+        return departureTime;
     }
 
-    public void setDepartureDateTime(String departureDateTime) {
-        this.departureDateTime = departureDateTime;
+    public void setDepartureTime(String departureTime) {
+        this.departureTime = departureTime;
     }
 
-    public String getArrivalDateTime() {
-        return arrivalDateTime;
+    public String getArrivalTime() {
+        return arrivalTime;
     }
 
-    public void setArrivalDateTime(String arrivalDateTime) {
-        this.arrivalDateTime = arrivalDateTime;
+    public void setArrivalTime(String arrivalTime) {
+        this.arrivalTime = arrivalTime;
     }
 
     public String getSeatNo() {

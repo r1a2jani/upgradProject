@@ -5,10 +5,10 @@ import java.time.LocalDateTime;
 public class RegularTicket extends Ticket {
     private String specialServices;
 
-    public RegularTicket(String pnr, String from, String to, String departureDateTime,
-                         String arrivalDateTime, String seatNo, float price, boolean cancelled,
+    public RegularTicket(String pnrNo, String from, String to, String departureTime,
+                         String arrivalTime, String seatNo, float price, boolean cancelled,
                          Flight flight, Traveller traveller, String specialServices) {
-        super(pnr, from, to, departureDateTime, arrivalDateTime, seatNo, price, cancelled,
+        super(pnrNo, from, to, departureTime, arrivalTime, seatNo, price, cancelled,
                 flight, traveller);
         this.specialServices = specialServices;
     }
